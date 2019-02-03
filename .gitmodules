@@ -1,0 +1,12 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/D-D-ing/frontend.git
+[submodule "uservice"]
+	path = uservice
+	url = https://github.com/D-D-ing/uservice.git
+[submodule "doc-service"]
+	path = doc-service
+	url = https://github.com/D-D-ing/doc-service.git
+[submodule "ms_location"]
+	path = ms_location
+	url = https://github.com/D-D-ing/ms_location.git
