@@ -3,7 +3,7 @@ node{
 		checkout scm
 		
 		sh("git submodule update --recursive")
-		sh("git commit -m Jenkins triggers monorepo to update")
+		sh("git commit -m 'Jenkins triggers monorepo to update'")
 		sh("git push")
 	}
 	stage('build'){
