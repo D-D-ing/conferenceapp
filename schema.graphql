@@ -1,1 +1,23 @@
+type Meeting {
+    id: ID!
+    name: String!
+    description: String!
+    accessToken: String!
+    interactions: [Interaction!]!
+}
+
+type Interaction {
+    id: ID!
+    name: String!
+    type: String!
+    visible: Boolean!
+    content: [ContentItem!]!
+}
+
+type ContentItem {
+    name: String!
+    type: String!
+    value: String
+    valueList: [String!]
+}
 
