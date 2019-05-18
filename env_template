@@ -1,0 +1,10 @@
+# template file for .env.
+# Specify environment variables like
+# ENVNAME=value
+# and save as .env.
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DATABASE=dding_app
+
+PHX_SECRET_KEY_BASE=
+

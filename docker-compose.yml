@@ -1,0 +1,45 @@
+# Version of docker-compose
+version: '3'
+
+# Containers we are going to run
+services:
+  # Our Phoenix container
+  phoenix-events-live:
+    # The build parameters for this container.
+    build:
+      # Here we define that it should build from the current directory
+      context: .
+      dockerfile: Dockerfile.phoenix-events-live
+    environment:
+      # Variables to connect to our Postgres server
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      PGDATABASE: ${POSTGRES_DATABASE}
+      PGPORT: 5432
+      PGPOOLSIZE: 10
+      PGHOST: db
+
+      # phoenix variables
+      PHX_PORT: 4000
+      PHX_URL: example.com
+      PHX_SECRET_KEY_BASE: ${PHX_SECRET_KEY_BASE}
+    ports:
+      # makes Phoenix app accessible outside of the container on port 5000
+      - 5000:4000
+    depends_on:
+      # The db container needs to be started before we start this container
+      - db
+  db:
+    container_name: db
+    image: postgres:11.3
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      # Set a path where Postgres should store the data
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+# Define the volumes
+volumes:
+  pgdata:

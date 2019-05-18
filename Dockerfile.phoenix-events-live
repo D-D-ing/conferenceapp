@@ -1,0 +1,29 @@
+FROM node:12.2.0-alpine AS frontend_build
+
+WORKDIR /nuxtapp
+COPY ./frontend /nuxtapp
+
+RUN npm run generate
+
+FROM elixir:1.8.1-alpine
+
+RUN apk update && \
+    apk add postgresql-client && \
+    apk upgrade
+
+WORKDIR /app
+
+ENV MIX_ENV=prod
+
+RUN mix local.hex --force
+RUN mix local.rebar --force
+
+COPY ./phoenix-events-live /app
+
+COPY --from=frontend_build /nuxtapp/dist /app/priv/static
+
+RUN mix deps.get --only prod
+RUN mix deps.compile
+RUN mix phx.digest
+
+CMD ["/app/entrypoint.sh"]
