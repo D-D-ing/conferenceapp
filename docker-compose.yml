@@ -21,7 +21,7 @@ services:
 
       # phoenix variables
       PHX_PORT: 4000
-      PHX_URL: example.com
+      PHX_URL: localhost
       PHX_SECRET_KEY_BASE: ${PHX_SECRET_KEY_BASE}
     ports:
       # makes Phoenix app accessible outside of the container on port 5000
