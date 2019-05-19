@@ -25,7 +25,7 @@ services:
       PHX_SECRET_KEY_BASE: ${PHX_SECRET_KEY_BASE}
     ports:
       # makes Phoenix app accessible outside of the container on port 5000
-      - 5000:4000
+      - 4000:4000
     depends_on:
       # The db container needs to be started before we start this container
       - db
