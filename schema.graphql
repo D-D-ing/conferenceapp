@@ -1,7 +1,7 @@
-type Meeting {
+type Event {
     id: ID!
     name: String!
-    description: String!
+    description: String
     accessToken: String!
     interactions: [Interaction!]!
 }
@@ -9,15 +9,12 @@ type Meeting {
 type Interaction {
     id: ID!
     name: String!
-    type: String!
+    text: String
+    event_id: ID!
+    type: Int!
+    value: String
     visible: Boolean!
-    content: [ContentItem!]!
+    items: [String!]
 }
 
-type ContentItem {
-    name: String!
-    type: String!
-    value: String
-    valueList: [String!]
-}
 
