@@ -3,4 +3,4 @@
 	url = https://github.com/D-D-ing/frontend.git
 [submodule "phoenix-events-live"]
 	path = phoenix-events-live
-	url = uberspace:dding-phoenix-events-live.git
+	url = https://github.com/D-D-ing/phoenix-events-live.git
