@@ -1,5 +1,5 @@
 # Version of docker-compose
-version: '3'
+version: '3.7'
 
 # Containers we are going to run
 services:
@@ -43,3 +43,4 @@ services:
 # Define the volumes
 volumes:
   pgdata:
+    name: ddingpgdata
