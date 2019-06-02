@@ -7,4 +7,5 @@ POSTGRES_PASSWORD=
 POSTGRES_DATABASE=dding_app
 
 PHX_SECRET_KEY_BASE=
+PHX_GUARDIAN_SECRET_KEY= (use 'mix guardian.gen.secret' to create a new key)
 

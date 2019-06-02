@@ -23,6 +23,7 @@ services:
       PHX_PORT: 4000
       PHX_URL: localhost
       PHX_SECRET_KEY_BASE: ${PHX_SECRET_KEY_BASE}
+      PHX_GUARDIAN_SECRET_KEY: ${PHX_GUARDIAN_SECRET_KEY}
     ports:
       # makes Phoenix app accessible outside of the container on port 5000
       - 4000:4000

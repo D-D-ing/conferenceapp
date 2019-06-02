@@ -11,3 +11,6 @@ this repo only contains automation scripts and submodules
 ** commit and push the changes
 * to build the app create an `.env` file with credentials from `env_template`
 * run `docker-compose build && docker-compose up`
+* access the server at localhost:4000. User for testing purposes on the frontend is
+** username: testuser
+** password: testtest
